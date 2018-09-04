@@ -1,0 +1,21 @@
+{
+  "name": "Spreadsheet",
+  "version": "1.0.0",
+  "description": "Spreadsheet built entirely in vanilla JavaScript that provides the basic functionality of a modern spreadsheet application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "open index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andychuong/spreadsheet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andychuong/spreadsheet/issues"
+  },
+  "homepage": "https://github.com/andychuong/spreadsheet#readme"
+}
