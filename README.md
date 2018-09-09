@@ -6,3 +6,12 @@ Spreadsheet built entirely in vanilla JavaScript that provides the basic functio
 ```
 npm start
 ```
+## Using the application
+- Mouse click
+- Arrow keys (up, down, left, right)
+
+## Testing
+```
+npm install
+npm test
+```
