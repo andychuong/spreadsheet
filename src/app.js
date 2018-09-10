@@ -51,11 +51,11 @@ let createTable = () => {
   }
   grid.appendChild(tbody)
 
-
   return grid // add table to body
 }
 
 document.addEventListener('click', onClick)
+
 function onClick(e) {
   if (e.target.className !== 'header' && e.target.className === 'cell'){
     cur.classList.remove('selected')

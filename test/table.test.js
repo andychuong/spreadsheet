@@ -56,5 +56,23 @@ describe("createTable", function () {
      // Check to make sure that the A1 cell is no longer selected
      expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
    })
+
+   // it("allows users to select a cell by using arrow keys", function () {
+   //
+   //   // For the setup in this test, find any cell other than A1
+   //   let tbody = table.querySelector('tbody')
+   //   let rows = tbody.querySelectorAll('tr')
+   //   let A3 = rows[3].children[1]
+   //
+   //   // Simulate clicking key down
+   //   let event = new KeyboardEvent('keydown', {bubbles: true, key: 'ArrowDown'})
+   //   document.dispatchEvent(event)
+   //
+   //   // Check to make sure that the A3 cell has been selected
+   //   expect(A3.classList.contains('selected')).to.eq(true)
+   //   // expect(A3.id).to.eq(true)
+   //   // Check to make sure that the A1 cell is no longer selected
+   //   expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
+   // })
  })
 })
