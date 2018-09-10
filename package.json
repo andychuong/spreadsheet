@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "open index.html"
+    "start": "open index.html",
+    "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",

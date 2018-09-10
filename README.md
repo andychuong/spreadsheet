@@ -6,3 +6,9 @@ Spreadsheet built entirely in vanilla JavaScript that provides the basic functio
 ```
 npm start
 ```
+
+## Testing the application
+```
+npm install
+npm test
+```
