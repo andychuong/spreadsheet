@@ -8,7 +8,7 @@ npm start
 ```
 
 ## Using the application
-### Selecting a cell
+#### Selecting a cell
 - Mouse click
 - Arrow keys (up, down, left, right)
 
