@@ -54,13 +54,17 @@ let createTable = () => {
   return grid // add table to body
 }
 
+function updateCur(){
+  cur = document.getElementsByClassName('selected')[0]
+}
+
 document.addEventListener('click', onClick)
 
 function onClick(e) {
   if (e.target.className !== 'header' && e.target.className === 'cell'){
     cur.classList.remove('selected')
     e.target.classList.add('selected')
-    cur = document.getElementsByClassName('selected')[0]
+    updateCur()
   }
 }
 
@@ -87,18 +91,18 @@ function checkKey(e) {
 function upKey(e){
   if(parseInt(cur.getAttribute('row'))>1){
     let upCol = `${cur.getAttribute('col')}${parseInt(cur.getAttribute('row'))-1}`
-    document.getElementsByClassName('selected')[0].classList.remove('selected')
+    cur.classList.remove('selected')
     document.getElementById(upCol).classList.add('selected')
-    cur = document.getElementsByClassName('selected')[0]
+    updateCur()
   }
 }
 
 function downKey(e){
   if(parseInt(cur.getAttribute('row'))<rows-1){
     let downCol = `${cur.getAttribute('col')}${parseInt(cur.getAttribute('row'))+1}`
-    document.getElementsByClassName('selected')[0].classList.remove('selected')
+    cur.classList.remove('selected')
     document.getElementById(downCol).classList.add('selected')
-    cur = document.getElementsByClassName('selected')[0]
+    updateCur()
   }
 }
 
@@ -106,9 +110,9 @@ function leftKey(e){
   let colIndex = alpha.indexOf(cur.getAttribute('col'))
   if(colIndex> 0){
     let leftCol = `${alpha[colIndex-1]}${cur.getAttribute('row')}`
-    document.getElementsByClassName('selected')[0].classList.remove('selected')
+    cur.classList.remove('selected')
     document.getElementById(leftCol).classList.add('selected')
-    cur = document.getElementsByClassName('selected')[0]
+    updateCur()
   }
 }
 
@@ -116,8 +120,8 @@ function rightKey(e){
   let colIndex = alpha.indexOf(cur.getAttribute('col'))
   if(colIndex < cols -2){
     let rightCol = `${alpha[colIndex+1]}${cur.getAttribute('row')}`
-    document.getElementsByClassName('selected')[0].classList.remove('selected')
+    cur.classList.remove('selected')
     document.getElementById(rightCol).classList.add('selected')
-    cur = document.getElementsByClassName('selected')[0]
+    updateCur()
   }
 }
