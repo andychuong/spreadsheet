@@ -68,11 +68,26 @@ describe("createTable", function () {
      let event = new KeyboardEvent('keydown', {bubbles: true, keyCode: '40'})
      document.dispatchEvent(event)
 
-     // Check to make sure that the A3 cell has been selected
+     // Check to make sure that the A2 cell has been selected
      expect(A2.classList.contains('selected')).to.eq(true)
-     // expect(A3.id).to.eq(true)
+
      // Check to make sure that the A1 cell is no longer selected
      expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
+   })
+
+   it("Check left edge case", function () {
+
+     // For the setup in this test, check if the left arrow key will move beyond col A
+     let tbody = table.querySelector('tbody')
+     let rows = tbody.querySelectorAll('tr')
+     let A1 = rows[1].children[1]
+
+     // Simulate clicking left key down
+     let event = new KeyboardEvent('keydown', {bubbles: true, keyCode: '37'})
+     document.dispatchEvent(event)
+
+     // Check to make sure that the A1 cell is still selected
+     expect(rows[1].children[1].classList.contains('selected')).to.eq(true)
    })
  })
 })
