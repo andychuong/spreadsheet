@@ -63,7 +63,6 @@ describe("createTable", function () {
      let tbody = table.querySelector('tbody')
      let rows = tbody.querySelectorAll('tr')
      let A2 = rows[2].children[1]
-     console.log(A2)
 
      // Simulate clicking key down
      let event = new KeyboardEvent('keydown', {bubbles: true, keyCode: '40'})

@@ -68,25 +68,25 @@ document.onkeydown = checkKey;
 
 function checkKey(e) {
     e = e || window.event;
-
-    if (e.keyCode == '38') {
-      upKey(e)
-    }
-    else if (e.keyCode == '40') {
-      downKey(e)
-    }
-    else if (e.keyCode == '37') {
-      leftKey(e)
-    }
-    else if (e.keyCode == '39') {
-      rightKey(e)
+    switch(e.keyCode) {
+    case 38:
+        upKey(e)
+        break;
+    case 40:
+        downKey(e)
+        break;
+    case 37:
+        leftKey(e)
+        break;
+    case 39:
+        rightKey(e)
+        break;
     }
 }
 
 function upKey(e){
   if(parseInt(cur.getAttribute('row'))>1){
     let upCol = `${cur.getAttribute('col')}${parseInt(cur.getAttribute('row'))-1}`
-    console.log(upCol)
     document.getElementsByClassName('selected')[0].classList.remove('selected')
     document.getElementById(upCol).classList.add('selected')
     cur = document.getElementsByClassName('selected')[0]
