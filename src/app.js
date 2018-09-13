@@ -55,11 +55,14 @@ let createTable = () => {
 }
 
 function updateCur(){
+  // newCell.classList.add('selected')
   cur = document.getElementsByClassName('selected')[0]
+  cur.contentEditable = true
 }
 
 function removeCur(){
   cur.classList.remove('selected')
+  cur.contentEditable = false
 }
 
 document.addEventListener('click', onClick)
