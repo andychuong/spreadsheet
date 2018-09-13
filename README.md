@@ -11,6 +11,8 @@ npm start
 #### Selecting a cell
 - Mouse click
 - Arrow keys (up, down, left, right)
+#### Editing a cell
+- Double click
 
 ## Testing
 ```
