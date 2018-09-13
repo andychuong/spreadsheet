@@ -58,6 +58,7 @@ function updateCur(){
   // newCell.classList.add('selected')
   cur = document.getElementsByClassName('selected')[0]
   cur.contentEditable = true
+  cur.dispatchEvent(new Event('dblclick', {bubbles: true}))
 }
 
 function removeCur(){
