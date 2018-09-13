@@ -9,9 +9,6 @@ let cur
 let createTable = () => {
   let grid = document.createElement('table')
   grid.id = "spreadsheet"
-  // grid.style.width = '100%'
-  // grid.setAttribute('border', '1')
-  // var tbdy = document.createElement('tbody');
   let thead = document.createElement('thead')
   grid.appendChild(thead)
   let tbody = document.createElement('tbody')
@@ -55,12 +52,13 @@ let createTable = () => {
 }
 
 function updateCur(){
-  // newCell.classList.add('selected')
   cur = document.getElementsByClassName('selected')[0]
+  // Allow cell to be edited
   cur.contentEditable = true
   cur.dispatchEvent(new Event('dblclick', {bubbles: true}))
 }
-
+// Remove selected class from current
+// Make current uneditable
 function removeCur(){
   cur.classList.remove('selected')
   cur.contentEditable = false
@@ -98,6 +96,7 @@ function checkKey(e) {
 }
 
 function upKey(e){
+  // Check edge case, by row number
   if(parseInt(cur.getAttribute('row'))>1){
     let upCol = `${cur.getAttribute('col')}${parseInt(cur.getAttribute('row'))-1}`
     removeCur()

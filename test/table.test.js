@@ -2,17 +2,17 @@ describe("Spreadsheet", function() {
 
   describe("Create Table", function() {
 
-    it("creates a table with a thead", function() {
+    it("Creates a table with a thead", function() {
       let table = createTable()
       expect(table.querySelectorAll('thead').length).to.eq(1)
     })
 
-    it("table has 27 columns", function() {
+    it("Creates a table that has 27 columns", function() {
       let table = createTable()
       expect(table.rows[0].cells.length).to.eq(27)
     })
 
-    it("table has 31 rows", function() {
+    it("Creates a table that has 31 rows", function() {
       let table = createTable()
       expect(table.getElementsByTagName("tr").length).to.eq(31)
     })
@@ -42,13 +42,12 @@ describe("Spreadsheet", function() {
       document.body.removeChild(container);
     })
 
-    it("allows users to select a cell by clicking on it", function() {
+    it("Allows users to select a cell by clicking on it", function() {
 
       // For the setup in this test, find any cell other than A1
       let tbody = table.querySelector('tbody')
       let rows = tbody.querySelectorAll('tr')
       let A3 = rows[3].children[1]
-      // let A3 = document.getElementById('A3')
 
       // Simulate clicking on the cell
       A3.dispatchEvent(new Event('click', {
@@ -62,7 +61,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
     })
 
-    it("allows users to select a cell by using arrow keys", function() {
+    it("Allows users to select a cell by using arrow keys", function() {
 
       // For the setup in this test, find any cell other than A1
       let tbody = table.querySelector('tbody')
@@ -83,7 +82,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
     })
 
-    it("Check up edge case", function() {
+    it("Check up edge case for up arrow key", function() {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
@@ -101,7 +100,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(true)
     })
 
-    it("Check down edge case", function() {
+    it("Check down edge case for down arrow key", function() {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
@@ -124,7 +123,7 @@ describe("Spreadsheet", function() {
 
     })
 
-    it("Check left edge case", function() {
+    it("Check left edge case for left arrow key", function() {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
@@ -142,7 +141,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(true)
     })
 
-    it("Check right edge case", function() {
+    it("Check right edge case for right arrow key", function() {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
