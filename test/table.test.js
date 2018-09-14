@@ -1,18 +1,18 @@
-describe("Spreadsheet", function() {
+describe("Spreadsheet", () => {
 
-  describe("Create Table", function() {
+  describe("Create Table", () => {
 
-    it("Creates a table with a thead", function() {
+    it("Creates a table with a thead", () => {
       let table = createTable()
       expect(table.querySelectorAll('thead').length).to.eq(1)
     })
 
-    it("Creates a table that has 27 columns", function() {
+    it("Creates a table that has 27 columns", () => {
       let table = createTable()
       expect(table.rows[0].cells.length).to.eq(27)
     })
 
-    it("Creates a table that has 31 rows", function() {
+    it("Creates a table that has 31 rows", () => {
       let table = createTable()
       expect(table.getElementsByTagName("tr").length).to.eq(31)
     })
@@ -22,7 +22,7 @@ describe("Spreadsheet", function() {
   // to test a number of things related to a single part of the application.
   //
   // In this case you are testing all the functionality around selecting cells
-  describe("Selecting Cells", function() {
+  describe("Selecting Cells", () => {
 
     // In each test you need a clean version of the table
     // so you need to add a new container DIV before each test,
@@ -31,18 +31,18 @@ describe("Spreadsheet", function() {
     // This line just declares those variables in a way that tests can access them
     let table, container
 
-    beforeEach(function() {
+    beforeEach( () => {
       document.body.insertAdjacentHTML('afterbegin', `<div id="container">`);
       container = document.getElementById('container')
       table = createTable()
       container.appendChild(table)
     })
 
-    afterEach(function() {
+    afterEach( () => {
       document.body.removeChild(container);
     })
 
-    it("Allows users to select a cell by clicking on it", function() {
+    it("Allows users to select a cell by clicking on it", () => {
 
       // For the setup in this test, find any cell other than A1
       let tbody = table.querySelector('tbody')
@@ -61,7 +61,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
     })
 
-    it("Allows users to select a cell by using arrow keys", function() {
+    it("Allows users to select a cell by using arrow keys", () => {
 
       // For the setup in this test, find any cell other than A1
       let tbody = table.querySelector('tbody')
@@ -82,7 +82,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(false)
     })
 
-    it("Check up edge case for up arrow key", function() {
+    it("Check up edge case for up arrow key", () => {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
@@ -100,7 +100,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(true)
     })
 
-    it("Check down edge case for down arrow key", function() {
+    it("Check down edge case for down arrow key", () => {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
@@ -123,7 +123,7 @@ describe("Spreadsheet", function() {
 
     })
 
-    it("Check left edge case for left arrow key", function() {
+    it("Check left edge case for left arrow key", () => {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
@@ -141,7 +141,7 @@ describe("Spreadsheet", function() {
       expect(rows[1].children[1].classList.contains('selected')).to.eq(true)
     })
 
-    it("Check right edge case for right arrow key", function() {
+    it("Check right edge case for right arrow key", () => {
 
       // For the setup in this test, check if the left arrow key will move beyond col A
       let tbody = table.querySelector('tbody')
